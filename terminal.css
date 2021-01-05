@@ -1,0 +1,11 @@
+.console{
+    width: 50vw;
+    height: 50vh;
+    background-color: black;
+    color: white;
+}
+
+.textArea{
+    width: 100%;
+
+}
