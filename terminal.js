@@ -27,8 +27,7 @@ function getEnter(){
 function writeInConsole(input_txt){
 
     let console = document.getElementById("console")
-    temp_html = `<span sytle="color: white">
-                    ${input_txt}
-                </span>`
+    temp_html = `${input_txt}`
+                
     console.append(temp_html)
 }
