@@ -11,23 +11,41 @@ function getEnter() {
     text_area.addEventListener('keypress', function (e) {
         if (e.key == 'Enter') {
             text_input = text_area.value
-            writeInConsole(text_input)
-
+            return_data = dataParse(text_input)
+            writeInConsole(return_data)
             text_area.value = ""
-
         }
     });
 }
 
-function writeInConsole(input_txt) {
+function writeInConsole(data) {
 
-    let console = document.getElementById("console_print")
-    // temp_html = `<div> ${input_txt} </div>`
+    input_txt = data["msg"]
+    class_name = data["class"]
+    result = data["result"]
 
-    test = document.createElement('div')
-    test.setAttribute("id","test")
-    test.innerText = input_txt
+    if (result) {
+        let console = document.getElementById("console_print")
 
+        test = document.createElement('div')
+        test.setAttribute("id", "test")
+        test.innerText = input_txt
 
-    console.appendChild(test)
+        console.appendChild(test)
+    }
+}
+
+function dataParse(user_input) {
+    console.log(user_input)
+    if (user_input === "add") {
+        return { 'class': "normal_white", "msg": user_input, 'result': true }
+
+    } else if (user_input === "untracked") {
+        return { 'class': "untracked_red", "msg": user_input, 'result': true }
+
+    } else if (user_input === "staged") {
+        return { 'class': "staged_green", "msg": user_input, 'result': true }
+    } else {
+        return { 'class': "failed", "msg": "failed", 'result': false }
+    }
 }
