@@ -29,6 +29,7 @@ function writeInConsole(data) {
 
         test = document.createElement('div')
         test.setAttribute("id", "test")
+        test.setAttribute("class", class_name)
         test.innerText = input_txt
 
         console.appendChild(test)
