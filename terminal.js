@@ -50,3 +50,5 @@ function dataParse(user_input) {
         return { 'class': "failed", "msg": "failed", 'result': false }
     }
 }
+
+
